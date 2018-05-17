@@ -6,7 +6,7 @@
     "mock:serve": "nodemon --watch mocks/dynamic --exec cb-mock-server --dynamic=mocks/dynamic --static=mocks/static --port=3000",
     "ng": "ng",
     "ng:serve": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build --prod",
+    "build": "ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
