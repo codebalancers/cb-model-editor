@@ -7,6 +7,8 @@ import { JsonEditorComponent } from '../components/json-editor/json-editor.compo
 import { HttpClientModule } from '@angular/common/http';
 import { ModelEditorComponent } from '../components/model-editor/model-editor.component';
 import './rxjs-operators';
+import { GrowlModule } from 'primeng/growl';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import './rxjs-operators';
   imports: [
     BrowserModule,
     ModelListModule,
-    HttpClientModule
+    HttpClientModule,
+    GrowlModule
   ],
   providers: [ ModelAdapter ],
   bootstrap: [ AppComponent ]
