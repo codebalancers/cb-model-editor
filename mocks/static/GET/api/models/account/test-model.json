@@ -1,1 +1,26 @@
-{}
+{
+  "module": "account",
+  "javaPackage": "gold.modules.security",
+  "restEndpoint": {
+    "config": {
+      "name": "securityManagement",
+      "apiVersion": "1.0",
+      "multitenancy": false
+    },
+    "dtos": [
+      {
+        "name": "passwordChangeDto",
+        "fields": [
+          {
+            "type": "String",
+            "name": "newPassword"
+          },
+          {
+            "type": "String",
+            "name": "oldPassword"
+          }
+        ]
+      }
+    ]
+  }
+}

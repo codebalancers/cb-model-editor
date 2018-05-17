@@ -27,7 +27,6 @@ export class AppComponent {
 
   selectedModel: ModelEntry;
 
-
   handleSelected(selectedModel: ModelEntry) {
     this.selectedModel = selectedModel;
     this.showList = false;
