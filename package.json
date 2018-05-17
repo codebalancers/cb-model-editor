@@ -5,11 +5,12 @@
   "scripts": {
     "mock:serve": "nodemon --watch mocks/dynamic --exec cb-mock-server --dynamic=mocks/dynamic --static=mocks/static --port=3000",
     "ng": "ng",
+    "ng:serve": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start": "concurrently --kill-others \"ng serve\" \"yarn run mock:serve\""
+    "start": "concurrently --kill-others \"yarn run ng:serve\" \"yarn run mock:serve\""
   },
   "private": true,
   "dependencies": {
