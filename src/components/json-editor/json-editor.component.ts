@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-json-editor',
@@ -11,6 +11,7 @@ export class JsonEditorComponent implements OnInit {
   private jsonEditor: any;
 
   @Input() value: {};
+  @Output() valueChange = new EventEmitter<string>();
 
   ngOnInit(): void {
     const starting_value = {
@@ -50,6 +51,10 @@ export class JsonEditorComponent implements OnInit {
 
       // Seed the form with a starting value
       startval: this.value
+    });
+
+    this.jsonEditor.on('change', () => {
+      this.valueChange.emit(this.jsonEditor.getValue());
     });
   }
 }

@@ -14,7 +14,7 @@ import { ModelEntry } from '../infra/model.adapter';
       <div class="row">
         <div class="col-10 col-centered">
           <app-model-list *ngIf="showList" (selected)="handleSelected($event)"></app-model-list>
-          <app-model-editor *ngIf="showEditor" [model]="selectedModel"></app-model-editor>
+          <app-model-editor *ngIf="showEditor" (cancel)="handleCancel()" [model]="selectedModel"></app-model-editor>
         </div>
       </div>
     </div>
@@ -31,5 +31,10 @@ export class AppComponent {
     this.selectedModel = selectedModel;
     this.showList = false;
     this.showEditor = true;
+  }
+
+  handleCancel() {
+    this.showList = true;
+    this.showEditor = false;
   }
 }
