@@ -6,9 +6,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
     <div class="container">
       <div class="row">
         <div class="col-10 col-centered">
-          <h1>Model Editor</h1>
+          <h1>Codebalancers Model Editor</h1>
         </div>
-
       </div>
 
       <div class="row">
@@ -58,10 +57,10 @@ export class AppComponent implements OnInit {
       schema: {
         $ref: 'api/schema.json',
         format: 'grid'
-      },
+      }
 
       // Seed the form with a starting value
-      startval: starting_value
+      // startval: starting_value
     });
   }
 }

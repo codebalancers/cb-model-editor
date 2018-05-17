@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
+import { ModelListModule } from '../components/model-list/model-list.module';
+import { ModelAdapter } from '../infra/model.adapter';
 
 
 @NgModule({
@@ -10,9 +10,11 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ModelListModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ ModelAdapter ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+}
