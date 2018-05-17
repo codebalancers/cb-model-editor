@@ -1,3 +1,5 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
 
-@import '../node_modules/bootstrap/scss/bootstrap';
-@import '../node_modules/bootstrap/scss/mixins/_breakpoints.scss';
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
