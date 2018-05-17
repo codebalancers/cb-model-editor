@@ -16,13 +16,14 @@ export class ModelAdapter {
   }
 
   public getModels(): Observable<ModelEntry[]> {
-    return Observable.of([
-      {
-        module: 'account',
-        filename: 'Test.json',
-        date: '01-01-1970',
-        size: 12345
-      }
-    ]);
+    return this.http.get('/api/models');
+  }
+
+  public getModel(module: string, filename: string): Observable<{}> {
+    return this.http.get(`/api/models/${module}/${filename}`);
+  }
+
+  public updateModel(module: string, filename: string, model: {}): Observable<void> {
+    return this.http.put(`/api/models/${module}/${filename}`, model);
   }
 }

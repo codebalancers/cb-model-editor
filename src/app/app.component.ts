@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,20 +11,22 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
       </div>
 
       <div class="row">
-        <div #editor class="col-10 col-centered"></div>
+        <div class="col-10 col-centered">
+          <app-json-editor [value]="value"></app-json-editor>
+        </div>
       </div>
     </div>
   `,
   styleUrls: [ './app.component.scss' ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   @ViewChild('editor') editor: ElementRef;
 
-  constructor() {
-  }
+  private jsonEditor: any;
+  private value;
 
-  ngOnInit(): void {
-    const starting_value = {
+  constructor() {
+    this.value = {
       name: 'John Smith',
       age: 35,
       gender: 'male',
@@ -45,22 +47,5 @@ export class AppComponent implements OnInit {
         }
       ]
     };
-
-    const _editor = new JSONEditor(this.editor.nativeElement, {
-      // Enable fetching schemas via ajax
-      ajax: true,
-
-      theme: 'bootstrap3',
-      iconlib: 'fontawesome4',
-
-      // The schema for the editor
-      schema: {
-        $ref: 'api/schema.json',
-        format: 'grid'
-      }
-
-      // Seed the form with a starting value
-      // startval: starting_value
-    });
   }
 }

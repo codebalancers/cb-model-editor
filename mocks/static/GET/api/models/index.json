@@ -1,0 +1,14 @@
+[
+  {
+    "module": "account",
+    "filename": "test-model.json",
+    "date": "01-01-1970",
+    "size": 12345
+  },
+  {
+    "module": "account",
+    "filename": "test-model2.json",
+    "date": "01-01-1970",
+    "size": 12345
+  }
+]
