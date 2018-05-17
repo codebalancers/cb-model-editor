@@ -1,1 +1,251 @@
-{}
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "module": {
+      "$id": "/properties/module",
+      "type": "string",
+      "title": "The Module Schema ",
+      "default": "",
+      "examples": [
+        "account"
+      ]
+    },
+    "javaPackage": {
+      "$id": "/properties/javaPackage",
+      "type": "string",
+      "title": "The Javapackage Schema ",
+      "default": "",
+      "examples": [
+        "gold.modules.security"
+      ]
+    },
+    "restEndpoint": {
+      "$id": "/properties/restEndpoint",
+      "type": "object",
+      "properties": {
+        "config": {
+          "$id": "/properties/restEndpoint/properties/config",
+          "type": "object",
+          "properties": {
+            "name": {
+              "$id": "/properties/restEndpoint/properties/config/properties/name",
+              "type": "string",
+              "title": "The Name Schema ",
+              "default": "",
+              "examples": [
+                "securityManagement"
+              ]
+            },
+            "apiVersion": {
+              "$id": "/properties/restEndpoint/properties/config/properties/apiVersion",
+              "type": "string",
+              "title": "The Apiversion Schema ",
+              "default": "",
+              "examples": [
+                "1.0"
+              ]
+            },
+            "multitenancy": {
+              "$id": "/properties/restEndpoint/properties/config/properties/multitenancy",
+              "type": "boolean",
+              "title": "The Multitenancy Schema ",
+              "default": false,
+              "examples": [
+                false
+              ]
+            }
+          }
+        },
+        "methods": {
+          "$id": "/properties/restEndpoint/properties/methods",
+          "type": "array",
+          "items": {
+            "$id": "/properties/restEndpoint/properties/methods/items",
+            "type": "object",
+            "properties": {
+              "name": {
+                "$id": "/properties/restEndpoint/properties/methods/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema ",
+                "default": "",
+                "examples": [
+                  "testLoginAvailability"
+                ]
+              },
+              "httpMethod": {
+                "$id": "/properties/restEndpoint/properties/methods/items/properties/httpMethod",
+                "type": "string",
+                "title": "The Httpmethod Schema ",
+                "default": "",
+                "examples": [
+                  "Get"
+                ]
+              },
+              "returnType": {
+                "$id": "/properties/restEndpoint/properties/methods/items/properties/returnType",
+                "type": "string",
+                "title": "The Returntype Schema ",
+                "default": "",
+                "examples": [
+                  "Boolean"
+                ]
+              },
+              "params": {
+                "$id": "/properties/restEndpoint/properties/methods/items/properties/params",
+                "type": "array",
+                "items": {
+                  "$id": "/properties/restEndpoint/properties/methods/items/properties/params/items",
+                  "type": "object",
+                  "properties": {
+                    "transferType": {
+                      "$id": "/properties/restEndpoint/properties/methods/items/properties/params/items/properties/transferType",
+                      "type": "string",
+                      "title": "The Transfertype Schema ",
+                      "default": "",
+                      "examples": [
+                        "path"
+                      ]
+                    },
+                    "type": {
+                      "$id": "/properties/restEndpoint/properties/methods/items/properties/params/items/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema ",
+                      "default": "",
+                      "examples": [
+                        "String"
+                      ]
+                    },
+                    "name": {
+                      "$id": "/properties/restEndpoint/properties/methods/items/properties/params/items/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema ",
+                      "default": "",
+                      "examples": [
+                        "login"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dtos": {
+          "$id": "/properties/restEndpoint/properties/dtos",
+          "type": "array",
+          "items": {
+            "$id": "/properties/restEndpoint/properties/dtos/items",
+            "type": "object",
+            "properties": {
+              "name": {
+                "$id": "/properties/restEndpoint/properties/dtos/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema ",
+                "default": "",
+                "examples": [
+                  "passwordChangeDto"
+                ]
+              },
+              "fields": {
+                "$id": "/properties/restEndpoint/properties/dtos/items/properties/fields",
+                "type": "array",
+                "items": {
+                  "$id": "/properties/restEndpoint/properties/dtos/items/properties/fields/items",
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "$id": "/properties/restEndpoint/properties/dtos/items/properties/fields/items/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema ",
+                      "default": "",
+                      "examples": [
+                        "String"
+                      ]
+                    },
+                    "name": {
+                      "$id": "/properties/restEndpoint/properties/dtos/items/properties/fields/items/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema ",
+                      "default": "",
+                      "examples": [
+                        "newPassword"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "additionalServiceInterfaceMethods": {
+          "$id": "/properties/restEndpoint/properties/additionalServiceInterfaceMethods",
+          "type": "array",
+          "items": {
+            "$id": "/properties/restEndpoint/properties/additionalServiceInterfaceMethods/items",
+            "type": "object",
+            "properties": {
+              "name": {
+                "$id": "/properties/restEndpoint/properties/additionalServiceInterfaceMethods/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema ",
+                "default": "",
+                "examples": [
+                  "requestEmailConfirmation"
+                ]
+              },
+              "returnType": {
+                "$id": "/properties/restEndpoint/properties/additionalServiceInterfaceMethods/items/properties/returnType",
+                "type": "string",
+                "title": "The Returntype Schema ",
+                "default": "",
+                "examples": [
+                  "Void"
+                ]
+              },
+              "comment": {
+                "$id": "/properties/restEndpoint/properties/additionalServiceInterfaceMethods/items/properties/comment",
+                "type": "string",
+                "title": "The Comment Schema ",
+                "default": "",
+                "examples": [
+                  "Request the confirmation of the email (e.g when a user has initially created an account)."
+                ]
+              },
+              "params": {
+                "$id": "/properties/restEndpoint/properties/additionalServiceInterfaceMethods/items/properties/params",
+                "type": "array",
+                "items": {
+                  "$id": "/properties/restEndpoint/properties/additionalServiceInterfaceMethods/items/properties/params/items",
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "$id": "/properties/restEndpoint/properties/additionalServiceInterfaceMethods/items/properties/params/items/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema ",
+                      "default": "",
+                      "examples": [
+                        "String"
+                      ]
+                    },
+                    "name": {
+                      "$id": "/properties/restEndpoint/properties/additionalServiceInterfaceMethods/items/properties/params/items/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema ",
+                      "default": "",
+                      "examples": [
+                        "subjectUuid"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
