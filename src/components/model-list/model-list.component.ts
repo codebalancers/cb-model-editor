@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ModelAdapter, ModelEntry } from '../../infra/model.adapter';
 
 @Component({
@@ -15,7 +15,7 @@ import { ModelAdapter, ModelEntry } from '../../infra/model.adapter';
       </thead>
 
       <tbody>
-      <tr *ngFor="let model of models">
+      <tr *ngFor="let model of models" (click)="handleClick(model)">
         <td>{{model.module}}</td>
         <td>{{model.filename}}</td>
         <td>{{model.date}}</td>
@@ -28,6 +28,8 @@ import { ModelAdapter, ModelEntry } from '../../infra/model.adapter';
 export class ModelListComponent implements OnInit {
   models: ModelEntry[];
 
+  @Output() selected = new EventEmitter<ModelEntry>();
+
   constructor(private modelAdapter: ModelAdapter) {
   }
 
@@ -35,5 +37,9 @@ export class ModelListComponent implements OnInit {
     this.modelAdapter
       .getModels()
       .subscribe(models => this.models = models);
+  }
+
+  handleClick(model: ModelEntry) {
+    this.selected.emit(model);
   }
 }

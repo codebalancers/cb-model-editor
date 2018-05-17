@@ -16,7 +16,7 @@ export class ModelAdapter {
   }
 
   public getModels(): Observable<ModelEntry[]> {
-    return this.http.get('/api/models');
+    return this.http.get<ModelEntry[]>('/api/models');
   }
 
   public getModel(module: string, filename: string): Observable<{}> {
@@ -24,6 +24,8 @@ export class ModelAdapter {
   }
 
   public updateModel(module: string, filename: string, model: {}): Observable<void> {
-    return this.http.put(`/api/models/${module}/${filename}`, model);
+    return this.http
+      .put(`/api/models/${module}/${filename}`, model)
+      .map(() => null);
   }
 }
