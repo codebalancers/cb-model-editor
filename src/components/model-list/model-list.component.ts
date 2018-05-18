@@ -18,7 +18,7 @@ import { ModelAdapter, ModelEntry } from '../../infra/model.adapter';
       <tr *ngFor="let model of models" (click)="handleClick(model)">
         <td>{{model.module}}</td>
         <td>{{model.filename}}</td>
-        <td>{{model.date}}</td>
+        <td>{{model.date | date:'medium'}}</td>
         <td>{{model.size}}</td>
       </tr>
       </tbody>
