@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-json-editor',
@@ -6,7 +6,7 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild }
     <div #editor></div>
   `
 })
-export class JsonEditorComponent implements OnInit {
+export class JsonEditorComponent implements OnInit, OnDestroy {
   @ViewChild('editor') editor: ElementRef;
   private jsonEditor: any;
 
@@ -14,28 +14,6 @@ export class JsonEditorComponent implements OnInit {
   @Output() valueChange = new EventEmitter<string>();
 
   ngOnInit(): void {
-    const starting_value = {
-      name: 'John Smith',
-      age: 35,
-      gender: 'male',
-      location: {
-        city: 'San Francisco',
-        state: 'California'
-      },
-      pets: [
-        {
-          name: 'Spot',
-          type: 'dog',
-          fixed: true
-        },
-        {
-          name: 'Whiskers',
-          type: 'cat',
-          fixed: false
-        }
-      ]
-    };
-
     this.jsonEditor = new JSONEditor(this.editor.nativeElement, {
       // Enable fetching schemas via ajax
       ajax: true,
@@ -56,5 +34,9 @@ export class JsonEditorComponent implements OnInit {
     this.jsonEditor.on('change', () => {
       this.valueChange.emit(this.jsonEditor.getValue());
     });
+  }
+
+  ngOnDestroy(): void {
+    this.jsonEditor.destroy();
   }
 }
