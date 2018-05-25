@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { ModelAdapter } from '../../infra/model.adapter';
 
 @Component({
   selector: 'app-json-editor',
@@ -13,21 +14,34 @@ export class JsonEditorComponent implements OnInit, OnDestroy {
   @Input() value: {};
   @Output() valueChange = new EventEmitter<string>();
 
+  constructor(private modelAdapter: ModelAdapter) {
+  }
+
   ngOnInit(): void {
+    this.modelAdapter
+      .getSchema()
+      .subscribe(schema => this.createEditor(schema));
+  }
+
+  ngOnDestroy(): void {
+    this.jsonEditor.destroy();
+  }
+
+  private createEditor(schema: {}) {
     this.jsonEditor = new JSONEditor(this.editor.nativeElement, {
       // Enable fetching schemas via ajax
-      ajax: true,
+      ajax: false,
 
       theme: 'bootstrap3',
       iconlib: 'fontawesome4',
 
       display_required_only: true,
+      disable_edit_json: true,
+      no_additional_properties: true,
+      // required_by_default: true, // show all required fields from start
 
       // The schema for the editor
-      schema: {
-        $ref: 'api/schema.json',
-        format: 'grid'
-      },
+      schema: schema,
 
       // Seed the form with a starting value
       startval: this.value
@@ -36,9 +50,5 @@ export class JsonEditorComponent implements OnInit, OnDestroy {
     this.jsonEditor.on('change', () => {
       this.valueChange.emit(this.jsonEditor.getValue());
     });
-  }
-
-  ngOnDestroy(): void {
-    this.jsonEditor.destroy();
   }
 }

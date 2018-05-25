@@ -28,4 +28,8 @@ export class ModelAdapter {
       .put(`/api/models/${module}/${filename}`, model)
       .map(() => null);
   }
+
+  public getSchema(): Observable<{}> {
+    return this.http.get('/api/schema.json');
+  }
 }
