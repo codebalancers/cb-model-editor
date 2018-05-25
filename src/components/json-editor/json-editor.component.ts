@@ -40,6 +40,9 @@ export class JsonEditorComponent implements OnInit, OnDestroy {
       no_additional_properties: true,
       // required_by_default: true, // show all required fields from start
 
+      disable_array_delete_all_rows: true,
+      disable_array_delete_last_row: true,
+
       // The schema for the editor
       schema: schema,
 
