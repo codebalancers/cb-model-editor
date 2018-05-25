@@ -21,6 +21,8 @@ export class JsonEditorComponent implements OnInit, OnDestroy {
       theme: 'bootstrap3',
       iconlib: 'fontawesome4',
 
+      display_required_only: true,
+
       // The schema for the editor
       schema: {
         $ref: 'api/schema.json',
