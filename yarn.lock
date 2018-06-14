@@ -159,6 +159,14 @@
   dependencies:
     tslib "^1.7.1"
 
+"@codebalancers/cb-commons@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@codebalancers/cb-commons/-/cb-commons-1.0.3.tgz#5d5179bd1a54d33ebac7dc3f17c3dc268fd4c5bd"
+
+"@codebalancers/cb-logging@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@codebalancers/cb-logging/-/cb-logging-1.0.8.tgz#f10eece4952c59ba749b31062ab290489457acff"
+
 "@json-editor/json-editor@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@json-editor/json-editor/-/json-editor-1.0.0.tgz#f5cf8cf3c4a3b566b00f0429313b19714acf99ea"
@@ -1053,14 +1061,6 @@ caseless@~0.11.0:
 caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
-
-cb-commons@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/cb-commons/-/cb-commons-1.0.3.tgz#eee0f05c40ae8158b49678d91427d2f37209bba3"
-
-cb-logging@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/cb-logging/-/cb-logging-1.0.8.tgz#fb6b31f6536a934e6842162415b874981250786a"
 
 cb-mock-server@^1.0.5:
   version "1.0.5"
