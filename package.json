@@ -1,6 +1,6 @@
 {
   "name": "@codebalancers/model-editor",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "scripts": {
     "mock:serve": "nodemon --watch mocks/dynamic --exec cb-mock-server --dynamic=mocks/dynamic --static=mocks/static --port=3000",
@@ -28,10 +28,10 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
-    "@json-editor/json-editor": "^1.0.0",
-    "bootstrap": "^3.3.7",
     "@codebalancers/cb-commons": "^1.0.3",
     "@codebalancers/cb-logging": "^1.0.8",
+    "@json-editor/json-editor": "^1.0.0",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "primeng": "^5.2.7",
