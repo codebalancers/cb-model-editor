@@ -1,6 +1,6 @@
 {
   "name": "@codebalancers/model-editor",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "scripts": {
     "mock:serve": "nodemon --watch mocks/dynamic --exec cb-mock-server --dynamic=mocks/dynamic --static=mocks/static --port=3000",
