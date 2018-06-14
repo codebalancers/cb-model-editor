@@ -159,13 +159,13 @@
   dependencies:
     tslib "^1.7.1"
 
-"@codebalancers/cb-commons@^1.0.3":
+"@codebalancers/commons@^1.0.3":
   version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@codebalancers/cb-commons/-/cb-commons-1.0.3.tgz#5d5179bd1a54d33ebac7dc3f17c3dc268fd4c5bd"
+  resolved "https://registry.yarnpkg.com/@codebalancers/commons/-/commons-1.0.3.tgz#94ab09e65caef9b59c958ed8458f7c78bc7145cd"
 
-"@codebalancers/cb-logging@^1.0.8":
+"@codebalancers/logging@^1.0.8":
   version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@codebalancers/cb-logging/-/cb-logging-1.0.8.tgz#f10eece4952c59ba749b31062ab290489457acff"
+  resolved "https://registry.yarnpkg.com/@codebalancers/logging/-/logging-1.0.8.tgz#7767a15feeefb1010d029b84fedce9d60108a0f1"
 
 "@json-editor/json-editor@^1.0.0":
   version "1.0.0"
